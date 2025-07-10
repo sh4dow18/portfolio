@@ -1,0 +1,15 @@
+/* Project Requirements */
+@import "tailwindcss";
+/* Tailwind Variables */
+@theme {
+  --font-inter: inter;
+  --color-primary: #2d9cdb;
+  --color-primary-light: #5bc3ff;
+}
+/* Dark Mode */
+@custom-variant dark (&:where(.dark, .dark *));
+/* Inter Font */
+@font-face {
+  font-family: "inter";
+  src: url(/fonts/Inter.ttf) format("truetype");
+}
