@@ -25,13 +25,13 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col h-dvh font-inter bg-gray-100">
         {/* Light */}
-        <div className="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
+        <div className="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(45,156,219,0.3),rgba(255,255,255,0))]" />
         {/* Header Container */}
         <header className="fixed top-0 z-10 flex place-content-between w-full mx-auto">
           <Nav />
         </header>
         {/* Main Content Container */}
-        <main className="flex flex-1">{children}</main>
+        <main className="flex flex-col flex-1 place-items-center place-content-center">{children}</main>
         {/* Informative Footer */}
         <footer className="text-center py-8 dark:text-gray-300 sm:flex sm:place-content-between sm:items-center sm:px-8">
           {/* Logos Container */}

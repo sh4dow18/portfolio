@@ -78,7 +78,8 @@ function Nav() {
           />
         </button>
         <Link href="/" className="text-center min-[1035px]:m-3">
-          <span className="hidden font-semibold text-sm transition-all hover:text-xl dark:text-white min-[490px]:block min-[490px]:text-lg">
+          {/* Ramses Solano Name */}
+          <span className="hidden font-semibold text-sm transition-all text-primary dark:text-primary-light hover:text-xl min-[490px]:block min-[490px]:text-lg">
             Ramsés Solano
           </span>
         </Link>
