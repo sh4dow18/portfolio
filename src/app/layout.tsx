@@ -3,8 +3,10 @@ import "./globals.css";
 // Root Layout Requirements
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { Nav } from "@/components";
+import { cloneElement } from "react";
+import { DiMitlicence } from "react-icons/di";
+import { FaGithub } from "react-icons/fa";
 // Root Layout Metadata
 export const metadata: Metadata = {
   title: "Ramsés Solano",
@@ -18,8 +20,8 @@ export default function RootLayout({
 }>) {
   // Root Layout Constants
   const LOGOS_LIST = [
-    { href: "https://github.com/sh4dow18/miteve-web", icon: "github" },
-    { href: "https://opensource.org/license/mit", icon: "mit" },
+    { href: "https://github.com/sh4dow18/miteve-web", icon: <FaGithub /> },
+    { href: "https://opensource.org/license/mit", icon: <DiMitlicence /> },
   ];
   return (
     <html lang="en">
@@ -31,22 +33,19 @@ export default function RootLayout({
           <Nav />
         </header>
         {/* Main Content Container */}
-        <main className="flex flex-col flex-1 place-items-center place-content-center">{children}</main>
+        <main className="flex flex-col flex-1 place-items-center place-content-center">
+          {children}
+        </main>
         {/* Informative Footer */}
         <footer className="text-center py-8 dark:text-gray-300 sm:flex sm:place-content-between sm:items-center sm:px-8">
           {/* Logos Container */}
           <div className="flex gap-4 justify-center max-w-fit mx-auto mb-5 sm:order-3 sm:m-0">
             {LOGOS_LIST.map((logo, index) => (
               <Link key={index} href={logo.href} target="_blank">
-                {/* Logo Image */}
-                <Image
-                  src={`/logos/${logo.icon}.svg`}
-                  alt={`${logo.icon} logo`}
-                  width={24}
-                  height={24}
-                  className="filter brightness-0 hover:brightness-50 dark:brightness-100 dark:hover:brightness-150"
-                  priority
-                />
+                {cloneElement(logo.icon, {
+                  className:
+                    "w-6 h-6 filter brightness-100 hover:brightness-150",
+                })}
               </Link>
             ))}
           </div>
