@@ -147,14 +147,18 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* First Section */}
                 <div className="flex flex-col gap-1">
-                  <h3 className="text-primary-light font-semibold">
+                  <h3 className="text-primary font-semibold dark:text-primary-light">
                     {item.title}
                   </h3>
-                  <span className="text-white font-medium">{item.company}</span>
-                  <span className="text-gray-400 text-sm">{item.date}</span>
+                  <span className="font-medium text-black dark:text-white">
+                    {item.company}
+                  </span>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">
+                    {item.date}
+                  </span>
                 </div>
                 {/* Second Section */}
-                <p className="text-gray-300 text-sm md:text-base md:col-span-2">
+                <p className="text-sm leading-7 md:text-base md:col-span-2">
                   {item.description}
                 </p>
               </div>
