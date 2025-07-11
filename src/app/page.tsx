@@ -1,4 +1,5 @@
 // Portfolio Page Requirements
+import { BriefcaseIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 import Link from "next/link";
 import { cloneElement } from "react";
@@ -34,14 +35,23 @@ export default function Home() {
       label: "CV Inglés",
     },
   ];
+  const EXPERIENCE_LIST = [
+    {
+      title: "Scrum Master",
+      company: "Universidad de Costa Rica",
+      date: "Marzo 2023 – Julio 2024",
+      description:
+        "Lideré un equipo de 5 desarrolladores, logrando crear un sistema web profesional reconocido como el mejor proyecto de Ingeniería en Sistemas de la generación 2023-2024. Diseñé el front-end con Next.js, TypeScript y PicoCSS, e implementé un back-end en SpringBoot con Spring Security y Kotlin Multiplataforma, integrando PostgreSQL. Documenté completamente el sistema, combinando formatos preexistentes y desarrollando nuevos. Desplegué entornos en la nube para pruebas con Render, Cloudflare R2, Vercel y un servidor on-prem con Ubuntu para producción.",
+    },
+  ];
   // Returns Portfolio Page
   return (
     // Portfolio Page Container
-    <div className="max-w-5xl mx-8 dark:text-gray-300">
+    <div className="flex flex-col gap-10 max-w-5xl mx-8 mt-20 md:mt-32 dark:text-gray-300">
       {/* Hero Container */}
       <section className="flex gap-5">
         {/* Hero Information Container */}
-        <section className="flex flex-col gap-3 max-w-lg md:gap-5">
+        <section className="flex flex-col gap-3 md:max-w-lg md:gap-5">
           {/* Pretitle information Container */}
           <div className="flex place-items-center gap-3">
             <Image
@@ -114,6 +124,43 @@ export default function Home() {
             className="rounded-4xl"
           />
         </div>
+      </section>
+      {/* Experience Section */}
+      <section
+        id="experience"
+        className="flex flex-col gap-7 place-content-center max-w-3xl"
+      >
+        {/* Experience Title Section */}
+        <section className="flex gap-3">
+          <BriefcaseIcon className="w-7 h-7" />
+          <h2 className="font-semibold text-xl md:text-2xl">
+            Experiencia Laboral
+          </h2>
+        </section>
+        {/* Experience List */}
+        <ol className="relative border-l border-gray-700 ml-3 pl-3">
+          {EXPERIENCE_LIST.map((item, index) => (
+            <li key={index} className="mb-12 ml-4">
+              {/* Time Line Point */}
+              <div className="absolute w-3 h-3 bg-primary-light rounded-full -left-1.5 mt-1.5" />
+              {/* Information Container */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* First Section */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-primary-light font-semibold">
+                    {item.title}
+                  </h3>
+                  <span className="text-white font-medium">{item.company}</span>
+                  <span className="text-gray-400 text-sm">{item.date}</span>
+                </div>
+                {/* Second Section */}
+                <p className="text-gray-300 text-sm md:text-base md:col-span-2">
+                  {item.description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </section>
     </div>
   );
