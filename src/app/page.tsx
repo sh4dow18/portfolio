@@ -18,7 +18,7 @@ import { HiOutlineRocketLaunch } from "react-icons/hi2";
 import { IoLogoVercel } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiGnubash, SiKotlin, SiSpring, SiTypescript } from "react-icons/si";
+import { SiGnubash, SiIntellijidea, SiKotlin, SiSpring, SiTypescript } from "react-icons/si";
 import { VscAzure, VscVscode } from "react-icons/vsc";
 // Portfolio Page Main Function
 export default function Home() {
@@ -247,12 +247,6 @@ export default function Home() {
           fill: "fill-[#F05133]",
         },
         {
-          name: "Github",
-          icon: <FaGithub />,
-          href: "https://github.com",
-          fill: "fill-black dark:fill-white",
-        },
-        {
           name: "Bash",
           icon: <SiGnubash />,
           href: "https://www.gnu.org/software/bash/",
@@ -263,6 +257,12 @@ export default function Home() {
           icon: <VscVscode />,
           href: "https://code.visualstudio.com",
           fill: "fill-[#0069B9]",
+        },
+        {
+          name: "IntelliJ",
+          icon: <SiIntellijidea />,
+          href: "https://www.jetbrains.com/idea/",
+          fill: "fill-black dark:fill-white",
         },
         {
           name: "Docker",
