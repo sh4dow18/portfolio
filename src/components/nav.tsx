@@ -19,7 +19,7 @@ function Nav() {
   // Nav Pages List to use in Mobile Nav and Desktop Nav
   const NAV_PAGES_LIST = [
     { href: "#experience", name: "Experiencia" },
-    { href: "#proyects", name: "Proyectos" },
+    { href: "#projects", name: "Proyectos" },
     { href: "#stack", name: "Stack" },
     { href: "#about-me", name: "Sobre mí" },
     { href: "#achievements", name: "Logros" },
@@ -89,7 +89,7 @@ function Nav() {
             <Link
               key={page.href}
               href={page.href}
-              className="mx-2 px-3 py-2 rounded-md select-none transition-all hover:text-black hover:bg-gray-200 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+              className="mx-2 px-3 py-2 rounded-md select-none transition-all hover:text-black hover:bg-gray-200 dark:text-white dark:font-semibold dark:hover:text-white dark:hover:bg-gray-700"
             >
               {page.name}
             </Link>

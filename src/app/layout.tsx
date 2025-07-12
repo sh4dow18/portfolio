@@ -24,12 +24,12 @@ export default function RootLayout({
     { href: "https://opensource.org/license/mit", icon: <DiMitlicence /> },
   ];
   return (
-    <html lang="en">
-      <body className="flex flex-col h-dvh font-inter scroll-smooth bg-gray-50 dark:bg-gray-950">
+    <html lang="es" className="scroll-smooth scroll-p-20">
+      <body className="flex flex-col h-dvh font-inter bg-gray-50 dark:bg-gray-950">
         {/* Light */}
         <div className="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(45,156,219,0.3),rgba(255,255,255,0))]" />
         {/* Header Container */}
-        <header className="fixed top-0 z-10 flex place-content-between w-full mx-auto backdrop-blur-xl">
+        <header className="fixed top-0 z-10 flex place-content-between w-full mx-auto bg-gray-50 backdrop-blur-3xl dark:bg-transparent">
           <Nav />
         </header>
         {/* Main Content Container */}
