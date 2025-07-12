@@ -6,15 +6,20 @@ import { cloneElement } from "react";
 import { BiLogoPostgresql } from "react-icons/bi";
 import {
   FaCss3Alt,
+  FaDocker,
   FaFilePdf,
+  FaGitAlt,
   FaGithub,
   FaLinkedin,
+  FaNpm,
   FaPython,
 } from "react-icons/fa";
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
+import { IoLogoVercel } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiGnubash, SiKotlin, SiSpring, SiTypescript } from "react-icons/si";
+import { VscAzure, VscVscode } from "react-icons/vsc";
 // Portfolio Page Main Function
 export default function Home() {
   // Portfolio Page Main Constants
@@ -172,6 +177,122 @@ export default function Home() {
           name: "Deploy",
           icon: <HiOutlineRocketLaunch />,
           href: "https://braitec-cr.vercel.app",
+        },
+      ],
+    },
+  ];
+  const STACK_LIST = [
+    {
+      title: "Frontend",
+      style: "grid grid-cols-3",
+      list: [
+        {
+          name: "Next.js",
+          icon: <RiNextjsFill />,
+          href: "https://nextjs.org",
+          fill: "fill-black dark:fill-white",
+        },
+        {
+          name: "Tailwind",
+          icon: <RiTailwindCssFill />,
+          href: "https://tailwindcss.com",
+          fill: "fill-primary dark:fill-primary-light",
+        },
+        {
+          name: "Typescript",
+          icon: <SiTypescript />,
+          href: "https://www.typescriptlang.org",
+          fill: "fill-[#3178C6]",
+        },
+        {
+          name: "CSS 3",
+          icon: <FaCss3Alt />,
+          href: "https://www.w3schools.com/css/",
+          fill: "fill-primary dark:fill-primary-light",
+        },
+      ],
+    },
+    {
+      title: "Backend",
+      style: "grid grid-cols-3",
+      list: [
+        {
+          name: "Spring",
+          icon: <SiSpring />,
+          href: "https://spring.io",
+          fill: "fill-[#6DB33F]",
+        },
+        {
+          name: "Kotlin",
+          icon: <SiKotlin />,
+          href: "https://kotlinlang.org",
+          fill: "fill-[#6B57FF]",
+        },
+        {
+          name: "PostgreSQL",
+          icon: <BiLogoPostgresql />,
+          href: "https://www.postgresql.org",
+          fill: "fill-[#669AC4]",
+        },
+        {
+          name: "Python",
+          icon: <FaPython />,
+          href: "https://www.python.org",
+          fill: "fill-yellow-300",
+        },
+      ],
+    },
+    {
+      title: "Herramientas",
+      style: "flex",
+      list: [
+        {
+          name: "Git",
+          icon: <FaGitAlt />,
+          href: "https://git-scm.com",
+          fill: "fill-[#F05133]",
+        },
+        {
+          name: "Github",
+          icon: <FaGithub />,
+          href: "https://github.com",
+          fill: "fill-black dark:fill-white",
+        },
+        {
+          name: "Bash",
+          icon: <SiGnubash />,
+          href: "https://www.gnu.org/software/bash/",
+          fill: "fill-black dark:fill-white",
+        },
+        {
+          name: "VSCode",
+          icon: <VscVscode />,
+          href: "https://code.visualstudio.com",
+          fill: "fill-[#0069B9]",
+        },
+        {
+          name: "NPM",
+          icon: <FaNpm />,
+          href: "https://www.npmjs.com",
+          fill: "fill-[#BE2F30]",
+        },
+        {
+          name: "Docker",
+          icon: <FaDocker />,
+          href: "https://www.docker.com",
+          fill: "fill-[#1D63ED]",
+        },
+        {
+          name: "Vercel",
+          icon: <IoLogoVercel />,
+          href: "https://vercel.com",
+          fill: "fill-black dark:fill-white",
+        },
+        {
+          name: "Azure",
+          icon: <VscAzure />,
+          href: "https://azure.microsoft.com",
+          fill: "fill-[#006DC1]",
         },
       ],
     },
@@ -365,6 +486,47 @@ export default function Home() {
                 </div>
               </section>
             </article>
+          ))}
+        </div>
+      </section>
+      {/* Stack Section */}
+      <section
+        id="stack"
+        className="flex flex-col gap-7 place-content-center max-w-3xl"
+      >
+        {/* Stack Title Section */}
+        <section className="flex gap-3">
+          <FaCss3Alt className="w-7 h-7" />
+          <h2 className="font-semibold text-xl md:text-2xl">Stack</h2>
+        </section>
+        {/* Stack List Container */}
+        <div className="flex flex-wrap gap-10">
+          {STACK_LIST.map((section, index) => (
+            // Stack Container
+            <section key={index} className="flex flex-col gap-3 w-full">
+              {/* Stack Title */}
+              <h3 className="font-semibold text-xl">{section.title}</h3>
+              {/* Stack Cards List */}
+              <div className="flex flex-wrap gap-3">
+                {section.list.map((tech, index2) => (
+                  // Stack Card Link
+                  <Link
+                    key={index2}
+                    href={tech.href}
+                    className="group flex flex-col place-content-center place-items-center gap-2 border border-gray-700 transition rounded-lg bg-gray-100 h-32 w-[45%] hover:scale-110 dark:bg-gray-900 min-[472px]:w-[30%] min-[612px]:w-[23%]"
+                  >
+                    {/* Stack Icon */}
+                    {cloneElement(tech.icon, {
+                      className: `w-16 h-16 ${tech.fill}`,
+                    })}
+                    {/* Stack Name */}
+                    <span className="font-medium group-hover:font-semibold group-hover:text-black dark:group-hover:text-white">
+                      {tech.name}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
           ))}
         </div>
       </section>
