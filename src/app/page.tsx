@@ -1,10 +1,20 @@
 // Portfolio Page Requirements
-import { BriefcaseIcon } from "@heroicons/react/16/solid";
+import { BriefcaseIcon, CodeBracketIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 import Link from "next/link";
 import { cloneElement } from "react";
-import { FaFilePdf, FaGithub, FaLinkedin } from "react-icons/fa";
+import { BiLogoPostgresql } from "react-icons/bi";
+import {
+  FaCss3Alt,
+  FaFilePdf,
+  FaGithub,
+  FaLinkedin,
+  FaPython,
+} from "react-icons/fa";
+import { HiOutlineRocketLaunch } from "react-icons/hi2";
 import { MdEmail } from "react-icons/md";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { SiGnubash, SiKotlin, SiSpring, SiTypescript } from "react-icons/si";
 // Portfolio Page Main Function
 export default function Home() {
   // Portfolio Page Main Constants
@@ -42,6 +52,128 @@ export default function Home() {
       date: "Marzo 2023 – Julio 2024",
       description:
         "Lideré un equipo de 5 desarrolladores, logrando crear un sistema web profesional reconocido como el mejor proyecto de Ingeniería en Sistemas de la generación 2023-2024. Diseñé el front-end con Next.js, TypeScript y PicoCSS, e implementé un back-end en SpringBoot con Spring Security y Kotlin Multiplataforma, integrando PostgreSQL. Documenté completamente el sistema, combinando formatos preexistentes y desarrollando nuevos. Desplegué entornos en la nube para pruebas con Render, Cloudflare R2, Vercel y un servidor on-prem con Ubuntu para producción.",
+    },
+  ];
+  const PROJECTS_LIST = [
+    {
+      image: "mateory",
+      title: "Mateory - Resuelve inventarios y colas con modelos simples",
+      stack: [
+        { icon: <RiNextjsFill />, name: "Next.js", fill: "white" },
+        {
+          icon: <RiTailwindCssFill />,
+          name: "Tailwind",
+          fill: "primary-light",
+        },
+        { icon: <SiTypescript />, name: "Typescript", fill: "blue-400" },
+      ],
+      description:
+        "Resuelve problemas básicos de inventarios y colas con modelos matemáticos predefinidos y pocos clics en una app web.",
+      buttons: [
+        {
+          name: "Código",
+          icon: <FaGithub />,
+          href: "https://github.com/sh4dow18/mateory",
+        },
+        {
+          name: "Deploy",
+          icon: <HiOutlineRocketLaunch />,
+          href: "https://mateory.vercel.app",
+        },
+      ],
+    },
+    {
+      image: "miteve-web",
+      title: "Miteve Web - Convierte tu contenido en un Netflix en casa",
+      stack: [
+        { icon: <RiNextjsFill />, name: "Next.js", fill: "white" },
+        {
+          icon: <RiTailwindCssFill />,
+          name: "Tailwind",
+          fill: "primary-light",
+        },
+        { icon: <SiTypescript />, name: "Typescript", fill: "blue-400" },
+      ],
+      description:
+        "Herramienta web para tener tu propio 'Netflix en casa' y ver contenido descargado desde un solo lugar por internet.",
+      buttons: [
+        {
+          name: "Código",
+          icon: <FaGithub />,
+          href: "https://github.com/sh4dow18/miteve-web",
+        },
+        {
+          name: "Deploy",
+          icon: <HiOutlineRocketLaunch />,
+          href: "https://miteve.vercel.app",
+        },
+      ],
+    },
+    {
+      image: "miteve-api",
+      title: "Miteve API - API que gestiona películas y series de Miteve",
+      stack: [
+        { icon: <SiSpring />, name: "Spring", fill: "green-400" },
+        { icon: <SiKotlin />, name: "Kotlin", fill: "purple-400" },
+        {
+          icon: <BiLogoPostgresql />,
+          name: "PostgreSQL",
+          fill: "primary-light",
+        },
+      ],
+      description:
+        "API que gestiona y brinda información de películas y series locales para usarse con Miteve Web",
+      buttons: [
+        {
+          name: "Código",
+          icon: <FaGithub />,
+          href: "https://github.com/sh4dow18/miteve-api",
+        },
+      ],
+    },
+    {
+      image: "nirit",
+      title: "Nirit - Entorno Linux minimalista con gestión en mosaico",
+      stack: [
+        { icon: <SiGnubash />, name: "Bash", fill: "white" },
+        { icon: <FaPython />, name: "Python", fill: "orange-300" },
+      ],
+      description:
+        "Entorno de escritorio para GNU/Linux enfocado en ventanas flotantes, pocos paquetes instalados y alta personalización",
+      buttons: [
+        {
+          name: "Código",
+          icon: <FaGithub />,
+          href: "https://github.com/sh4dow18/nirit",
+        },
+      ],
+    },
+    {
+      image: "braitec",
+      title: "Braitec - Sitio oficial de soluciones tecnológicas",
+      stack: [
+        { icon: <RiNextjsFill />, name: "Next.js", fill: "white" },
+        {
+          icon: <FaCss3Alt />,
+          name: "CSS 3",
+          fill: "primary-light",
+        },
+        { icon: <SiTypescript />, name: "Typescript", fill: "blue-400" },
+      ],
+      description:
+        "Sitio web oficial de Braitec: Soluciones Tecnológicas, que presenta sus servicios y soluciones tecnológicas para usuarios.",
+      buttons: [
+        {
+          name: "Código",
+          icon: <FaGithub />,
+          href: "https://github.com/sh4dow18/braitec",
+        },
+        {
+          name: "Deploy",
+          icon: <HiOutlineRocketLaunch />,
+          href: "https://braitec-cr.vercel.app",
+        },
+      ],
     },
   ];
   // Returns Portfolio Page
@@ -165,6 +297,73 @@ export default function Home() {
             </li>
           ))}
         </ol>
+      </section>
+      {/* Projects Section */}
+      <section
+        id="projects"
+        className="flex flex-col gap-7 place-content-center max-w-3xl"
+      >
+        {/* Projects Title Section */}
+        <section className="flex gap-3">
+          <CodeBracketIcon className="w-7 h-7" />
+          <h2 className="font-semibold text-xl md:text-2xl">Proyectos</h2>
+        </section>
+        {/* Projects List Container */}
+        <div className="flex flex-col gap-10">
+          {PROJECTS_LIST.map((project, index) => (
+            // Project Card Container
+            <article key={index} className="flex flex-wrap gap-6 md:flex-nowrap">
+              {/* Project Image */}
+              <Image
+                src={`/proyects/${project.image}.webp`}
+                alt={`${project.image} Proyect Image`}
+                width={400}
+                height={300}
+                className="rounded-xl border border-gray-700 w-full"
+              />
+              {/* Project Information Section */}
+              <section className="flex flex-col gap-3 md:gap-2">
+                {/* Project Title */}
+                <h3 className="text-black font-semibold text-xl dark:text-white">
+                  {project.title}
+                </h3>
+                {/* Project Stack */}
+                <div className="flex gap-1">
+                  {project.stack.map((tech, index2) => (
+                    <div
+                      key={index2}
+                      className="flex place-items-center gap-1 w-fit bg-gray-800 text-white text-xs p-1 rounded-sm border border-gray-700"
+                    >
+                      {cloneElement(tech.icon, {
+                        className: `fill-${tech.fill}`,
+                      })}
+                      <span>{tech.name}</span>
+                    </div>
+                  ))}
+                </div>
+                {/* Project Description */}
+                <p>{project.description}</p>
+                {/* Project Buttons */}
+                <div className="flex gap-2">
+                  {project.buttons.map((button, index3) => (
+                    <Link
+                      key={index3}
+                      href={button.href}
+                      target="_blank"
+                      className="group flex gap-1 place-items-center w-fit px-3 py-2 rounded-lg border transition-all hover:bg-gray-900 hover:text-white dark:bg-gray-900 dark:border-gray-500 dark:hover:bg-gray-50 dark:hover:text-black"
+                    >
+                      {cloneElement(button.icon, {
+                        className:
+                          "w-5 h-5 scale-90 fill-gray-900 group-hover:fill-gray-300 dark:fill-gray-300 dark:group-hover:fill-gray-900",
+                      })}
+                      <span>{button.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            </article>
+          ))}
+        </div>
       </section>
     </div>
   );
