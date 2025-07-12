@@ -312,14 +312,17 @@ export default function Home() {
         <div className="flex flex-col gap-10">
           {PROJECTS_LIST.map((project, index) => (
             // Project Card Container
-            <article key={index} className="flex flex-wrap gap-6 md:flex-nowrap">
+            <article
+              key={index}
+              className="flex flex-wrap gap-6 md:flex-nowrap"
+            >
               {/* Project Image */}
               <Image
                 src={`/proyects/${project.image}.webp`}
                 alt={`${project.image} Proyect Image`}
                 width={400}
                 height={300}
-                className="rounded-xl border border-gray-700 w-full"
+                className="rounded-xl border border-gray-700 w-full md:w-[400px]"
               />
               {/* Project Information Section */}
               <section className="flex flex-col gap-3 md:gap-2">
