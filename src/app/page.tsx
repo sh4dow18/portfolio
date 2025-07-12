@@ -64,13 +64,13 @@ export default function Home() {
       image: "mateory",
       title: "Mateory - Resuelve inventarios y colas con modelos simples",
       stack: [
-        { icon: <RiNextjsFill />, name: "Next.js", fill: "white" },
+        { icon: <RiNextjsFill />, name: "Next.js", fill: "fill-white" },
         {
           icon: <RiTailwindCssFill />,
           name: "Tailwind",
-          fill: "primary-light",
+          fill: "fill-primary-light",
         },
-        { icon: <SiTypescript />, name: "Typescript", fill: "blue-400" },
+        { icon: <SiTypescript />, name: "Typescript", fill: "fill-[#3178C6]" },
       ],
       description:
         "Resuelve problemas básicos de inventarios y colas con modelos matemáticos predefinidos y pocos clics en una app web.",
@@ -91,13 +91,13 @@ export default function Home() {
       image: "miteve-web",
       title: "Miteve Web - Convierte tu contenido en un Netflix en casa",
       stack: [
-        { icon: <RiNextjsFill />, name: "Next.js", fill: "white" },
+        { icon: <RiNextjsFill />, name: "Next.js", fill: "fill-white" },
         {
           icon: <RiTailwindCssFill />,
           name: "Tailwind",
-          fill: "primary-light",
+          fill: "fill-primary-light",
         },
-        { icon: <SiTypescript />, name: "Typescript", fill: "blue-400" },
+        { icon: <SiTypescript />, name: "Typescript", fill: "fill-[#3178C6]" },
       ],
       description:
         "Herramienta web para tener tu propio 'Netflix en casa' y ver contenido descargado desde un solo lugar por internet.",
@@ -118,12 +118,12 @@ export default function Home() {
       image: "miteve-api",
       title: "Miteve API - API que gestiona películas y series de Miteve",
       stack: [
-        { icon: <SiSpring />, name: "Spring", fill: "green-400" },
-        { icon: <SiKotlin />, name: "Kotlin", fill: "purple-400" },
+        { icon: <SiSpring />, name: "Spring", fill: "fill-[#6DB33F]" },
+        { icon: <SiKotlin />, name: "Kotlin", fill: "fill-[#6B57FF]" },
         {
           icon: <BiLogoPostgresql />,
           name: "PostgreSQL",
-          fill: "primary-light",
+          fill: "fill-[#669AC4]",
         },
       ],
       description:
@@ -140,8 +140,8 @@ export default function Home() {
       image: "nirit",
       title: "Nirit - Entorno Linux minimalista con gestión en mosaico",
       stack: [
-        { icon: <SiGnubash />, name: "Bash", fill: "white" },
-        { icon: <FaPython />, name: "Python", fill: "orange-300" },
+        { icon: <SiGnubash />, name: "Bash", fill: "fill-white" },
+        { icon: <FaPython />, name: "Python", fill: "fill-yellow-300" },
       ],
       description:
         "Entorno de escritorio para GNU/Linux enfocado en ventanas flotantes, pocos paquetes instalados y alta personalización",
@@ -157,13 +157,13 @@ export default function Home() {
       image: "braitec",
       title: "Braitec - Sitio oficial de soluciones tecnológicas",
       stack: [
-        { icon: <RiNextjsFill />, name: "Next.js", fill: "white" },
+        { icon: <RiNextjsFill />, name: "Next.js", fill: "fill-white" },
         {
           icon: <FaCss3Alt />,
           name: "CSS 3",
-          fill: "primary-light",
+          fill: "fill-primary-light",
         },
-        { icon: <SiTypescript />, name: "Typescript", fill: "blue-400" },
+        { icon: <SiTypescript />, name: "Typescript", fill: "fill-[#3178C6]" },
       ],
       description:
         "Sitio web oficial de Braitec: Soluciones Tecnológicas, que presenta sus servicios y soluciones tecnológicas para usuarios.",
@@ -459,7 +459,7 @@ export default function Home() {
                       className="flex place-items-center gap-1 w-fit bg-gray-800 text-white text-xs p-1 rounded-sm border border-gray-700"
                     >
                       {cloneElement(tech.icon, {
-                        className: `fill-${tech.fill}`,
+                        className: tech.fill,
                       })}
                       <span>{tech.name}</span>
                     </div>
