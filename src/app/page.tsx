@@ -229,16 +229,10 @@ export default function Home() {
           fill: "fill-[#6B57FF]",
         },
         {
-          name: "PostgreSQL",
+          name: "Postgres",
           icon: <BiLogoPostgresql />,
           href: "https://www.postgresql.org",
           fill: "fill-[#669AC4]",
-        },
-        {
-          name: "Python",
-          icon: <FaPython />,
-          href: "https://www.python.org",
-          fill: "fill-yellow-300",
         },
       ],
     },
@@ -269,12 +263,6 @@ export default function Home() {
           icon: <VscVscode />,
           href: "https://code.visualstudio.com",
           fill: "fill-[#0069B9]",
-        },
-        {
-          name: "NPM",
-          icon: <FaNpm />,
-          href: "https://www.npmjs.com",
-          fill: "fill-[#BE2F30]",
         },
         {
           name: "Docker",
@@ -500,10 +488,13 @@ export default function Home() {
           <h2 className="font-semibold text-xl md:text-2xl">Stack</h2>
         </section>
         {/* Stack List Container */}
-        <div className="flex flex-wrap gap-10">
+        <div className="flex flex-wrap gap-5 place-content-center">
           {STACK_LIST.map((section, index) => (
             // Stack Container
-            <section key={index} className="flex flex-col gap-3 w-full">
+            <section
+              key={index}
+              className="flex flex-col gap-3 w-full min-[816px]:w-fit"
+            >
               {/* Stack Title */}
               <h3 className="font-semibold text-xl">{section.title}</h3>
               {/* Stack Cards List */}
@@ -513,14 +504,14 @@ export default function Home() {
                   <Link
                     key={index2}
                     href={tech.href}
-                    className="group flex flex-col place-content-center place-items-center gap-2 border border-gray-700 transition rounded-lg bg-gray-100 h-32 w-[45%] hover:scale-110 dark:bg-gray-900 min-[472px]:w-[30%] min-[612px]:w-[23%]"
+                    className="group flex flex-col place-content-center place-items-center gap-2 border border-gray-700 transition rounded-lg bg-gray-100 h-26 w-[45%] hover:scale-110 dark:bg-gray-900 min-[452px]:w-[30%] min-[816px]:w-24"
                   >
                     {/* Stack Icon */}
                     {cloneElement(tech.icon, {
-                      className: `w-16 h-16 ${tech.fill}`,
+                      className: `w-12 h-12 ${tech.fill}`,
                     })}
                     {/* Stack Name */}
-                    <span className="font-medium group-hover:font-semibold group-hover:text-black dark:group-hover:text-white">
+                    <span className="font-medium text-sm group-hover:font-semibold group-hover:text-black dark:group-hover:text-white">
                       {tech.name}
                     </span>
                   </Link>
