@@ -19,12 +19,14 @@ function Nav() {
   const menuRef = useRef<HTMLDivElement>(null);
   // Nav Pages List to use in Mobile Nav and Desktop Nav
   const NAV_PAGES_LIST = [
-    { href: "#experience", name: "Experiencia" },
-    { href: "#projects", name: "Proyectos" },
+    {
+      href: "#experience",
+      name: language === "es" ? "Experiencia" : "Experience",
+    },
+    { href: "#projects", name: language === "es" ? "Proyectos" : "Projects" },
     { href: "#stack", name: "Stack" },
-    { href: "#about-me", name: "Sobre mí" },
-    { href: "#education", name: "Educación" },
-    { href: "#contact", name: "Contacto" },
+    { href: "#about-me", name: language === "es" ? "Sobre Mí" : "About Me" },
+    { href: "#education", name: language === "es" ? "Educación" : "Education" },
   ];
   useEffect(() => {
     const PARAMS = new URLSearchParams(window.location.search);
