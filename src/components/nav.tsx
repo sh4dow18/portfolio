@@ -102,7 +102,10 @@ function Nav() {
             className={`w-7 mx-auto ${open ? "" : "hidden"}`.trimEnd()}
           />
         </button>
-        <Link href="/" className="text-center min-[1035px]:m-3">
+        <Link
+          href={`/${language === "en" ? "?lang=en" : ""}`}
+          className="text-center min-[1035px]:m-3"
+        >
           {/* Ramses Solano Name */}
           <span className="hidden font-semibold text-sm transition-all text-primary dark:text-primary-light hover:text-xl min-[490px]:block min-[490px]:text-lg">
             Ramsés Solano
