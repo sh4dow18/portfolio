@@ -22,7 +22,7 @@ function Nav() {
     { href: "#projects", name: "Proyectos" },
     { href: "#stack", name: "Stack" },
     { href: "#about-me", name: "Sobre mí" },
-    { href: "#achievements", name: "Logros" },
+    { href: "#education", name: "Educación" },
     { href: "#contact", name: "Contacto" },
   ];
   // Execute this use effect to close the menu when clicking outside it

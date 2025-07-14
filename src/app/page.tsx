@@ -1,7 +1,9 @@
 // Portfolio Page Requirements
 import {
+  AcademicCapIcon,
   BriefcaseIcon,
   CodeBracketIcon,
+  PhotoIcon,
   UserIcon,
 } from "@heroicons/react/16/solid";
 import Image from "next/image";
@@ -62,7 +64,7 @@ export default function Home() {
   const EXPERIENCE_LIST = [
     {
       title: "Scrum Master",
-      company: "Universidad de Costa Rica",
+      company: "Universidad de Costa Rica (UCR)",
       date: "Marzo 2023 – Julio 2024",
       description:
         "Lideré un equipo de 5 desarrolladores, logrando crear un sistema web profesional reconocido como el mejor proyecto de Ingeniería en Sistemas de la generación 2023-2024. Diseñé el front-end con Next.js, TypeScript y PicoCSS, e implementé un back-end en SpringBoot con Spring Security y Kotlin Multiplataforma, integrando PostgreSQL. Documenté completamente el sistema, combinando formatos preexistentes y desarrollando nuevos. Desplegué entornos en la nube para pruebas con Render, Cloudflare R2, Vercel y un servidor on-prem con Ubuntu para producción.",
@@ -292,6 +294,21 @@ export default function Home() {
           fill: "fill-[#006DC1]",
         },
       ],
+    },
+  ];
+  const EDUCATION_LIST = [
+    {
+      title: "Bachillerato en Ingeniería en Sistemas de Información",
+      company: "Universidad Nacional de Costa Rica (UNA)",
+      date: "Actualmente",
+      degree: null,
+    },
+    {
+      title: "Diplomado de Programación de Aplicaciones Informáticas",
+      company: "Universidad Nacional de Costa Rica (UNA)",
+      date: "Noviembre 2023",
+      degree:
+        "/degrees/Diplomado-en-Programacion-de-Aplicaciones-Informaticas-Ramses-Solano-Arias.webp",
     },
   ];
   // Returns Portfolio Page
@@ -582,6 +599,59 @@ export default function Home() {
             </p>
           </section>
         </div>
+      </section>
+      {/* Education Section */}
+      <section
+        id="education"
+        className="flex flex-col gap-7 place-content-center max-w-3xl"
+      >
+        {/* Education Title Section */}
+        <section className="flex gap-3">
+          <AcademicCapIcon className="w-7 h-7" />
+          <h2 className="font-semibold text-xl md:text-2xl">Educación</h2>
+        </section>
+        {/* Education List */}
+        <ol className="relative border-l border-gray-700 ml-3 pl-3">
+          {EDUCATION_LIST.map((item, index) => (
+            <li key={index} className="mb-12 ml-4">
+              {/* Time Line Point */}
+              <div className="absolute w-3 h-3 bg-primary-light rounded-full -left-1.5 mt-1.5" />
+              {/* Information Container */}
+              <div className="flex flex-wrap gap-4">
+                {/* First Section */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-primary font-semibold dark:text-primary-light">
+                    {item.title}
+                  </h3>
+                  <span className="font-medium text-black dark:text-white">
+                    {item.company}
+                  </span>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">
+                    {item.date}
+                  </span>
+                </div>
+                {/* Degree Section */}
+                {item.degree !== null ? (
+                  // If is already finished
+                  <Link
+                    href={item.degree}
+                    target="_blank"
+                    className="group flex gap-1 place-items-center w-fit h-fit px-3 py-2 rounded-lg border transition-all hover:bg-gray-900 hover:text-white dark:bg-gray-900 dark:border-gray-500 dark:hover:bg-gray-50 dark:hover:text-black"
+                  >
+                    <PhotoIcon className="w-5 h-5 scale-90 fill-gray-900 group-hover:fill-gray-300 dark:fill-gray-300 dark:group-hover:fill-gray-900" />
+                    <span>Visualizar Certificado</span>
+                  </Link>
+                ) : (
+                  // If it is not finished
+                  <button className="flex gap-1 place-items-center w-fit h-fit px-3 py-2 rounded-lg border cursor-not-allowed text-gray-300 dark:text-gray-500 dark:bg-gray-700 dark:border-gray-500">
+                    <PhotoIcon className="w-5 h-5 scale-90 fill-gray-300 dark:fill-gray-500" />
+                    <span>Visualizar Certificado</span>
+                  </button>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
       </section>
     </div>
   );
