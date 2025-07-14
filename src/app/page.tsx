@@ -1,5 +1,9 @@
 // Portfolio Page Requirements
-import { BriefcaseIcon, CodeBracketIcon } from "@heroicons/react/16/solid";
+import {
+  BriefcaseIcon,
+  CodeBracketIcon,
+  UserIcon,
+} from "@heroicons/react/16/solid";
 import Image from "next/image";
 import Link from "next/link";
 import { cloneElement } from "react";
@@ -11,14 +15,19 @@ import {
   FaGitAlt,
   FaGithub,
   FaLinkedin,
-  FaNpm,
   FaPython,
 } from "react-icons/fa";
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
 import { IoLogoVercel } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiGnubash, SiIntellijidea, SiKotlin, SiSpring, SiTypescript } from "react-icons/si";
+import {
+  SiGnubash,
+  SiIntellijidea,
+  SiKotlin,
+  SiSpring,
+  SiTypescript,
+} from "react-icons/si";
 import { VscAzure, VscVscode } from "react-icons/vsc";
 // Portfolio Page Main Function
 export default function Home() {
@@ -519,6 +528,59 @@ export default function Home() {
               </div>
             </section>
           ))}
+        </div>
+      </section>
+      {/* About me Section */}
+      <section
+        id="about-me"
+        className="flex flex-col gap-7 place-content-center max-w-3xl"
+      >
+        {/* About me Title Section */}
+        <section className="flex gap-3">
+          <UserIcon className="w-7 h-7" />
+          <h2 className="font-semibold text-xl md:text-2xl">Sobre mí</h2>
+        </section>
+        {/* About me Information Container */}
+        <div className="flex flex-col gap-10 md:flex-row">
+          {/* About me Information Image */}
+          <div className="flex place-items-center place-content-center md:order-2">
+            <Image
+              src="/Ramses.webp"
+              alt="Ramsés Profile Image"
+              width={260}
+              height={260}
+              className="rounded-2xl rotate-3 border-8 border-gray-300 ring-1 ring-black/70 dark:border-gray-800 dark:ring-white/40"
+            />
+          </div>
+          {/* About me Information Text Section */}
+          <section className="flex flex-col gap-3 leading-6 md:max-w-lg md:order-1">
+            <p>
+              Me llamo Ramsés y soy un apasionado por la tecnología, lo que me
+              llevó a estudiar{" "}
+              <strong className="font-normal text-yellow-700 dark:text-yellow-200">
+                Ingeniería en Sistemas de Información en la Universidad Nacional
+                de Costa Rica
+              </strong>
+              .
+            </p>
+            <p>
+              Tengo experiencia en desarrollo web,{" "}
+              <strong className="font-normal text-yellow-700 dark:text-yellow-200">
+                donde he liderado un proyecto real como Scrum Master, destacando
+                por la organización, la calidad técnica y el trabajo en equipo
+              </strong>
+              .
+            </p>
+            <p>
+              También{" "}
+              <strong className="font-normal text-yellow-700 dark:text-yellow-200">
+                he trabajado con servidores Linux, configuraciones de hosting y
+                despliegues en plataformas como Vercel y Render
+              </strong>
+              . Me gusta aprender constantemente, crear soluciones útiles y
+              mejorar mis habilidades a través de proyectos personales.
+            </p>
+          </section>
         </div>
       </section>
     </div>
