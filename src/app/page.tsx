@@ -370,7 +370,7 @@ export default function Home() {
                 key={index}
                 href={button.href}
                 target="_blank"
-                className="group flex gap-1 place-items-center w-fit px-3 py-2 rounded-full border transition-all hover:bg-gray-900 hover:text-white dark:bg-gray-900 dark:border-gray-500 dark:hover:bg-gray-50 dark:hover:text-black"
+                className="group flex gap-1 place-items-center w-fit px-3 py-2 rounded-lg border transition-all hover:bg-gray-900 hover:text-white dark:bg-gray-900 dark:border-gray-500 dark:hover:bg-gray-50 dark:hover:text-black"
               >
                 {cloneElement(button.icon, {
                   className:
