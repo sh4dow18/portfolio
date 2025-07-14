@@ -1,8 +1,10 @@
 // Portfolio Page Requirements
+import { ProjectButton } from "@/components";
 import {
   AcademicCapIcon,
   BriefcaseIcon,
   CodeBracketIcon,
+  DocumentIcon,
   PhotoIcon,
   UserIcon,
 } from "@heroicons/react/16/solid";
@@ -31,8 +33,13 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { VscAzure, VscVscode } from "react-icons/vsc";
+interface Props {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 // Portfolio Page Main Function
-export default function Home() {
+export default async function Home({ searchParams }: Props) {
+  // Page Language
+  const LANGUAGE = (await searchParams).lang || "es";
   // Portfolio Page Main Constants
   const HERO_BUTTONS_LIST = [
     {
@@ -48,32 +55,41 @@ export default function Home() {
     {
       href: "mailto:ramses.solano.arias@gmail.com",
       icon: <MdEmail />,
-      label: "Correo Electrónico",
+      label: LANGUAGE === "es" ? "Correo Electrónico" : "E-Mail Address",
     },
     {
       href: "/docs/CV Ramses Solano Arias ES.pdf",
       icon: <FaFilePdf />,
-      label: "CV Español",
+      label: LANGUAGE === "es" ? "CV Español" : "Spanish CV",
     },
     {
       href: "/docs/CV Ramses Solano Arias EN.pdf",
       icon: <FaFilePdf />,
-      label: "CV Inglés",
+      label: LANGUAGE === "es" ? "CV Inglés" : "English CV",
     },
   ];
   const EXPERIENCE_LIST = [
     {
       title: "Scrum Master",
       company: "Universidad de Costa Rica (UCR)",
-      date: "Marzo 2023 – Julio 2024",
+      date:
+        LANGUAGE === "es"
+          ? "Marzo 2023 – Julio 2024"
+          : "March 2023 - July 2024",
       description:
-        "Lideré un equipo de 5 desarrolladores, logrando crear un sistema web profesional reconocido como el mejor proyecto de Ingeniería en Sistemas de la generación 2023-2024. Diseñé el front-end con Next.js, TypeScript y PicoCSS, e implementé un back-end en SpringBoot con Spring Security y Kotlin Multiplataforma, integrando PostgreSQL. Documenté completamente el sistema, combinando formatos preexistentes y desarrollando nuevos. Desplegué entornos en la nube para pruebas con Render, Cloudflare R2, Vercel y un servidor on-prem con Ubuntu para producción.",
+        LANGUAGE === "es"
+          ? "Lideré un equipo de 5 desarrolladores, logrando crear un sistema web profesional reconocido como el mejor proyecto de Ingeniería en Sistemas de la generación 2023-2024. Diseñé el front-end con Next.js, TypeScript y PicoCSS, e implementé un back-end en SpringBoot con Spring Security y Kotlin Multiplataforma, integrando PostgreSQL. Documenté completamente el sistema, combinando formatos preexistentes y desarrollando nuevos. Desplegué entornos en la nube para pruebas con Render, Cloudflare R2, Vercel y un servidor on-prem con Ubuntu para producción."
+          : "I led a team of 5 developers as a Scrum Master, successfully creating a professional web system recognized as the best Systems Engineering project of the 2023-2024 generation. I designed the front-end using Next.js, TypeScript, and PicoCSS, and implemented a back-end with Spring Boot, Spring Security, and Kotlin Multiplatform, integrating PostgreSQL. I fully documented the system, combining existing formats and developing new ones. I deployed cloud environments for testing using Render, Cloudflare R2, Vercel, and an on-prem server with Ubuntu for production",
     },
   ];
   const PROJECTS_LIST = [
     {
       image: "mateory",
-      title: "Mateory - Resuelve inventarios y colas con modelos simples",
+      title: `Mateory - ${
+        LANGUAGE === "es"
+          ? "Resuelve inventarios y colas con modelos simples"
+          : "Solve inventories and queues with simple models"
+      }`,
       stack: [
         { icon: <RiNextjsFill />, name: "Next.js", fill: "fill-white" },
         {
@@ -84,23 +100,20 @@ export default function Home() {
         { icon: <SiTypescript />, name: "Typescript", fill: "fill-[#3178C6]" },
       ],
       description:
-        "Resuelve problemas básicos de inventarios y colas con modelos matemáticos predefinidos y pocos clics en una app web.",
-      buttons: [
-        {
-          name: "Código",
-          icon: <FaGithub />,
-          href: "https://github.com/sh4dow18/mateory",
-        },
-        {
-          name: "Deploy",
-          icon: <HiOutlineRocketLaunch />,
-          href: "https://mateory.vercel.app",
-        },
-      ],
+        LANGUAGE === "es"
+          ? "Resuelve problemas básicos de inventarios y colas con modelos matemáticos predefinidos y pocos clics en una app web."
+          : "Solve basic inventory and queuing problems with predefined mathematical models and a few clicks in a web app.",
+      github: "mateory",
+      deploy: "https://mateory.vercel.app",
+      docs: null,
     },
     {
       image: "miteve-web",
-      title: "Miteve Web - Convierte tu contenido en un Netflix en casa",
+      title: `Miteve Web - ${
+        LANGUAGE === "es"
+          ? "Convierte tu contenido en un Netflix en casa"
+          : "Turn your content into a Netflix at home"
+      }`,
       stack: [
         { icon: <RiNextjsFill />, name: "Next.js", fill: "fill-white" },
         {
@@ -111,23 +124,20 @@ export default function Home() {
         { icon: <SiTypescript />, name: "Typescript", fill: "fill-[#3178C6]" },
       ],
       description:
-        "Herramienta web para tener tu propio 'Netflix en casa' y ver contenido descargado desde un solo lugar por internet.",
-      buttons: [
-        {
-          name: "Código",
-          icon: <FaGithub />,
-          href: "https://github.com/sh4dow18/miteve-web",
-        },
-        {
-          name: "Deploy",
-          icon: <HiOutlineRocketLaunch />,
-          href: "https://miteve.vercel.app",
-        },
-      ],
+        LANGUAGE === "es"
+          ? "Herramienta web para tener tu propio 'Netflix en casa' y ver contenido descargado desde un solo lugar por internet."
+          : "A web tool for having your own 'Netflix at home' and watching downloaded content from a single location online.",
+      github: "miteve-web",
+      deploy: "https://miteve.vercel.app",
+      docs: null,
     },
     {
       image: "miteve-api",
-      title: "Miteve API - API que gestiona películas y series de Miteve",
+      title: `Miteve API - ${
+        LANGUAGE === "es"
+          ? "API que gestiona películas y series de Miteve"
+          : "API that manages Miteve movies and series"
+      }`,
       stack: [
         { icon: <SiSpring />, name: "Spring", fill: "fill-[#6DB33F]" },
         { icon: <SiKotlin />, name: "Kotlin", fill: "fill-[#6B57FF]" },
@@ -138,35 +148,39 @@ export default function Home() {
         },
       ],
       description:
-        "API que gestiona y brinda información de películas y series locales para usarse con Miteve Web",
-      buttons: [
-        {
-          name: "Código",
-          icon: <FaGithub />,
-          href: "https://github.com/sh4dow18/miteve-api",
-        },
-      ],
+        LANGUAGE === "es"
+          ? "API que gestiona y brinda información de películas y series locales para usarse con Miteve Web"
+          : "API that manages and provides information on local movies and series for use with Miteve Web",
+      github: "miteve-api",
+      deploy: null,
+      docs: null,
     },
     {
       image: "nirit",
-      title: "Nirit - Entorno Linux minimalista con gestión en mosaico",
+      title: `Nirit - ${
+        LANGUAGE === "es"
+          ? "Entorno Linux minimalista con gestión en mosaico"
+          : "Minimalist Linux environment with tile management"
+      }`,
       stack: [
         { icon: <SiGnubash />, name: "Bash", fill: "fill-white" },
         { icon: <FaPython />, name: "Python", fill: "fill-yellow-300" },
       ],
       description:
-        "Entorno de escritorio para GNU/Linux enfocado en ventanas flotantes, pocos paquetes instalados y alta personalización",
-      buttons: [
-        {
-          name: "Código",
-          icon: <FaGithub />,
-          href: "https://github.com/sh4dow18/nirit",
-        },
-      ],
+        LANGUAGE === "es"
+          ? "Entorno de escritorio para GNU/Linux enfocado en ventanas en mosaico, pocos paquetes instalados y alta personalización"
+          : "Desktop environment for GNU/Linux focused on tile windows, few installed packages, and high customization",
+      github: "nirit",
+      deploy: null,
+      docs: "https://digital-me.vercel.app/nirit",
     },
     {
       image: "braitec",
-      title: "Braitec - Sitio oficial de soluciones tecnológicas",
+      title: `Braitec - ${
+        LANGUAGE === "es"
+          ? "Sitio oficial de soluciones tecnológicas"
+          : "Official website of technological solutions"
+      }`,
       stack: [
         { icon: <RiNextjsFill />, name: "Next.js", fill: "fill-white" },
         {
@@ -177,19 +191,12 @@ export default function Home() {
         { icon: <SiTypescript />, name: "Typescript", fill: "fill-[#3178C6]" },
       ],
       description:
-        "Sitio web oficial de Braitec: Soluciones Tecnológicas, que presenta sus servicios y soluciones tecnológicas para usuarios.",
-      buttons: [
-        {
-          name: "Código",
-          icon: <FaGithub />,
-          href: "https://github.com/sh4dow18/braitec",
-        },
-        {
-          name: "Deploy",
-          icon: <HiOutlineRocketLaunch />,
-          href: "https://braitec-cr.vercel.app",
-        },
-      ],
+        LANGUAGE === "es"
+          ? "Sitio web oficial de 'Braitec: Soluciones Tecnológicas', que presenta sus servicios y soluciones tecnológicas para usuarios."
+          : "'Braitec: Technological Solutions' official website, which presents its services and technological solutions for users.",
+      github: "braitec",
+      deploy: "https://braitec-cr.vercel.app",
+      docs: null,
     },
   ];
   const STACK_LIST = [
@@ -248,7 +255,7 @@ export default function Home() {
       ],
     },
     {
-      title: "Herramientas",
+      title: LANGUAGE === "es" ? "Herramientas" : "Tools",
       style: "flex",
       list: [
         {
@@ -298,15 +305,21 @@ export default function Home() {
   ];
   const EDUCATION_LIST = [
     {
-      title: "Bachillerato en Ingeniería en Sistemas de Información",
+      title:
+        LANGUAGE === "es"
+          ? "Bachillerato en Ingeniería en Sistemas de Información"
+          : "Bachelor of Information Systems Engineering",
       company: "Universidad Nacional de Costa Rica (UNA)",
-      date: "Actualmente",
+      date: LANGUAGE === "es" ? "Actualmente" : "Current",
       degree: null,
     },
     {
-      title: "Diplomado de Programación de Aplicaciones Informáticas",
+      title:
+        LANGUAGE === "es"
+          ? "Diplomado de Programación de Aplicaciones Informáticas"
+          : "Diploma in Computer Applications Programming",
       company: "Universidad Nacional de Costa Rica (UNA)",
-      date: "Noviembre 2023",
+      date: LANGUAGE === "es" ? "Noviembre 2023" : "November 2023",
       degree:
         "/degrees/Diplomado-en-Programacion-de-Aplicaciones-Informaticas-Ramses-Solano-Arias.webp",
     },
@@ -338,7 +351,9 @@ export default function Home() {
                 <span className="relative inline-flex overflow-hidden rounded-full p-[1px]">
                   <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"></span>
                   <div className="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap">
-                    Disponible para Trabajar
+                    {LANGUAGE === "es"
+                      ? "Disponible para Trabajar"
+                      : "Available to Work"}
                   </div>
                 </span>
               </div>
@@ -346,22 +361,30 @@ export default function Home() {
           </div>
           {/* Title */}
           <h1 className="text-3xl font-extrabold md:text-5xl">
-            Hola,{" "}
+            {LANGUAGE === "es" ? "Hola" : "Hello"},{" "}
             <span className="text-primary dark:text-primary-light">
-              soy Ramsés
+              {LANGUAGE === "es" ? "soy Ramsés" : "I'm Ramsés"}
             </span>
           </h1>
           {/* Ramsés Solano Description */}
           <p className="leading-7 md:text-lg md:leading-8">
-            +1 año de experiencia.{" "}
+            +1{" "}
+            {LANGUAGE === "es" ? "año de experiencia" : "years of experience"}.{" "}
             <strong className="text-yellow-600 dark:text-yellow-200">
-              Diplomado en Programación de Aplicaciones Informáticas
+              {LANGUAGE === "es"
+                ? "Diplomado en Programación de Aplicaciones Informáticas"
+                : "Diploma in Computer Applications Programming"}
             </strong>
-            . Especializado en el{" "}
+            . {LANGUAGE === "es" ? "Especializado en el" : "Specialized in"}{" "}
             <strong className="text-orange-700 dark:text-orange-300">
-              Desarrollo de Aplicaciones Web
+              {LANGUAGE === "es"
+                ? "Desarrollo de Aplicaciones Web"
+                : "Web Application Development"}
             </strong>
-            , asi como liderazgo ágil y reparación de computadoras
+            ,{" "}
+            {LANGUAGE === "es"
+              ? "asi como liderazgo ágil y reparación de computadoras"
+              : "as well as agile leadership and computer repair"}
           </p>
           {/* Hero Buttons Container */}
           <div className="flex flex-wrap gap-3">
@@ -401,7 +424,7 @@ export default function Home() {
         <section className="flex gap-3">
           <BriefcaseIcon className="w-7 h-7" />
           <h2 className="font-semibold text-xl md:text-2xl">
-            Experiencia Laboral
+            {LANGUAGE === "es" ? "Experiencia Laboral" : "Work Experience"}
           </h2>
         </section>
         {/* Experience List */}
@@ -441,7 +464,9 @@ export default function Home() {
         {/* Projects Title Section */}
         <section className="flex gap-3">
           <CodeBracketIcon className="w-7 h-7" />
-          <h2 className="font-semibold text-xl md:text-2xl">Proyectos</h2>
+          <h2 className="font-semibold text-xl md:text-2xl">
+            {LANGUAGE === "es" ? "Proyectos" : "Projects"}
+          </h2>
         </section>
         {/* Projects List Container */}
         <div className="flex flex-col gap-10">
@@ -449,7 +474,7 @@ export default function Home() {
             // Project Card Container
             <article
               key={index}
-              className="flex flex-wrap gap-6 md:flex-nowrap"
+              className="flex flex-wrap gap-6 min-[800px]:flex-nowrap"
             >
               {/* Project Image */}
               <Image
@@ -457,7 +482,7 @@ export default function Home() {
                 alt={`${project.image} Proyect Image`}
                 width={400}
                 height={300}
-                className="rounded-xl border border-gray-700 w-full md:w-[400px]"
+                className="rounded-xl border border-gray-700 w-full min-[800px]:w-[400px]"
               />
               {/* Project Information Section */}
               <section className="flex flex-col gap-3 md:gap-2">
@@ -482,21 +507,26 @@ export default function Home() {
                 {/* Project Description */}
                 <p>{project.description}</p>
                 {/* Project Buttons */}
-                <div className="flex gap-2">
-                  {project.buttons.map((button, index3) => (
-                    <Link
-                      key={index3}
-                      href={button.href}
-                      target="_blank"
-                      className="group flex gap-1 place-items-center w-fit px-3 py-2 rounded-lg border transition-all hover:bg-gray-900 hover:text-white dark:bg-gray-900 dark:border-gray-500 dark:hover:bg-gray-50 dark:hover:text-black"
-                    >
-                      {cloneElement(button.icon, {
-                        className:
-                          "w-5 h-5 scale-90 fill-gray-900 group-hover:fill-gray-300 dark:fill-gray-300 dark:group-hover:fill-gray-900",
-                      })}
-                      <span>{button.name}</span>
-                    </Link>
-                  ))}
+                <div className="flex flex-wrap gap-2">
+                  <ProjectButton
+                    href={`https://github.com/sh4dow18/${project.github}`}
+                    icon={<FaGithub />}
+                    name="Github"
+                  />
+                  {project.deploy !== null && (
+                    <ProjectButton
+                      href={project.deploy}
+                      icon={<HiOutlineRocketLaunch />}
+                      name="Deploy"
+                    />
+                  )}
+                  {project.docs !== null && (
+                    <ProjectButton
+                      href={`/${project.docs}`}
+                      icon={<DocumentIcon />}
+                      name="Docs"
+                    />
+                  )}
                 </div>
               </section>
             </article>
@@ -555,7 +585,9 @@ export default function Home() {
         {/* About me Title Section */}
         <section className="flex gap-3">
           <UserIcon className="w-7 h-7" />
-          <h2 className="font-semibold text-xl md:text-2xl">Sobre mí</h2>
+          <h2 className="font-semibold text-xl md:text-2xl">
+            {LANGUAGE === "es" ? "Sobre mí" : "About Me"}
+          </h2>
         </section>
         {/* About me Information Container */}
         <div className="flex flex-col gap-10 md:flex-row">
@@ -572,30 +604,40 @@ export default function Home() {
           {/* About me Information Text Section */}
           <section className="flex flex-col gap-3 leading-6 md:max-w-lg md:order-1">
             <p>
-              Me llamo Ramsés y soy un apasionado por la tecnología, lo que me
-              llevó a estudiar{" "}
+              {LANGUAGE === "es"
+                ? "Me llamo Ramsés y soy un apasionado por la tecnología, lo que mellevó a estudiar"
+                : "My name is Ramsés and I am passionate about technology, which led me to study"}{" "}
               <strong className="font-normal text-yellow-700 dark:text-yellow-200">
-                Ingeniería en Sistemas de Información en la Universidad Nacional
-                de Costa Rica
+                {LANGUAGE === "es"
+                  ? "Ingeniería en Sistemas de Información en la"
+                  : "Information Systems Engineering in"}{" "}
+                Universidad Nacional de Costa Rica (UNA)
               </strong>
               .
             </p>
             <p>
-              Tengo experiencia en desarrollo web,{" "}
+              {LANGUAGE === "es"
+                ? "Tengo experiencia en desarrollo web"
+                : "I have experience in web development"}
+              ,{" "}
               <strong className="font-normal text-yellow-700 dark:text-yellow-200">
-                donde he liderado un proyecto real como Scrum Master, destacando
-                por la organización, la calidad técnica y el trabajo en equipo
+                {LANGUAGE === "es"
+                  ? "donde he liderado un proyecto real como Scrum Master, destacando por la organización, la calidad técnica y el trabajo en equipo"
+                  : "where I have led a real project as a Scrum Master, standing out for the organization, technical quality and teamwork"}
               </strong>
               .
             </p>
             <p>
-              También{" "}
+              {LANGUAGE === "es" ? "También" : "Also"}{" "}
               <strong className="font-normal text-yellow-700 dark:text-yellow-200">
-                he trabajado con servidores Linux, configuraciones de hosting y
-                despliegues en plataformas como Vercel y Render
+                {LANGUAGE === "es"
+                  ? "he trabajado con servidores Linux, configuraciones de hosting y despliegues en plataformas como Vercel y Render"
+                  : "I have worked with Linux servers, hosting configurations and deployments on platforms such as Vercel and Render"}
               </strong>
-              . Me gusta aprender constantemente, crear soluciones útiles y
-              mejorar mis habilidades a través de proyectos personales.
+              .{" "}
+              {LANGUAGE === "es"
+                ? "Me gusta aprender constantemente, crear soluciones útiles y mejorar mis habilidades a través de proyectos personales."
+                : "I enjoy constantly learning, creating useful solutions, and improving my skills through personal projects."}
             </p>
           </section>
         </div>
@@ -608,7 +650,9 @@ export default function Home() {
         {/* Education Title Section */}
         <section className="flex gap-3">
           <AcademicCapIcon className="w-7 h-7" />
-          <h2 className="font-semibold text-xl md:text-2xl">Educación</h2>
+          <h2 className="font-semibold text-xl md:text-2xl">
+            {LANGUAGE === "es" ? "Educación" : "Education"}
+          </h2>
         </section>
         {/* Education List */}
         <ol className="relative border-l border-gray-700 ml-3 pl-3">
@@ -639,13 +683,21 @@ export default function Home() {
                     className="group flex gap-1 place-items-center w-fit h-fit px-3 py-2 rounded-lg border transition-all hover:bg-gray-900 hover:text-white dark:bg-gray-900 dark:border-gray-500 dark:hover:bg-gray-50 dark:hover:text-black"
                   >
                     <PhotoIcon className="w-5 h-5 scale-90 fill-gray-900 group-hover:fill-gray-300 dark:fill-gray-300 dark:group-hover:fill-gray-900" />
-                    <span>Visualizar Certificado</span>
+                    <span>
+                      {LANGUAGE === "es"
+                        ? "Visualizar Certificado"
+                        : "Visualize Degree"}
+                    </span>
                   </Link>
                 ) : (
                   // If it is not finished
                   <button className="flex gap-1 place-items-center w-fit h-fit px-3 py-2 rounded-lg border cursor-not-allowed text-gray-300 dark:text-gray-500 dark:bg-gray-700 dark:border-gray-500">
                     <PhotoIcon className="w-5 h-5 scale-90 fill-gray-300 dark:fill-gray-500" />
-                    <span>Visualizar Certificado</span>
+                    <span>
+                      {LANGUAGE === "es"
+                        ? "Visualizar Certificado"
+                        : "Visualize Degree"}
+                    </span>
                   </button>
                 )}
               </div>

@@ -25,6 +25,13 @@ function Nav() {
     { href: "#education", name: "Educación" },
     { href: "#contact", name: "Contacto" },
   ];
+  useEffect(() => {
+    const PARAMS = new URLSearchParams(window.location.search);
+    if (PARAMS.get("lang") === "en") {
+      document.documentElement.lang = "en";
+      SetLanguage("en");
+    }
+  }, []);
   // Execute this use effect to close the menu when clicking outside it
   useEffect(() => {
     const ClickOutside = (event: MouseEvent) => {
@@ -56,6 +63,16 @@ function Nav() {
       return;
     }
     DOCUMENT_CLASS_LIST.add("dark");
+  };
+  // Function that Sets or Removes the current language
+  const ChangeLanguage = () => {
+    if (document.documentElement.lang === "es") {
+      document.documentElement.lang = "en";
+      SetLanguage("en");
+      return;
+    }
+    document.documentElement.lang = "es";
+    SetLanguage("es");
   };
   // Returns Nav Component
   return (
@@ -105,28 +122,36 @@ function Nav() {
             className="hidden w-7 h-7 cursor-pointer transition-all hover:scale-125 dark:block dark:fill-gray-300"
             onClick={ChangeTheme}
           />
-          <Image
-            src="/logos/espanol.svg"
-            alt="Español Logo"
-            width={24}
-            height={24}
-            priority
-            className={`w-7 py-1 rounded-md cursor-pointer select-none transition-all hover:scale-125 ${
-              language === "es" ? "block" : "hidden"
-            }`}
-            onClick={() => SetLanguage("en")}
-          />
-          <Image
-            src="/logos/english.svg"
-            alt="English Logo"
-            width={24}
-            height={24}
-            priority
-            className={`w-7 rounded-md cursor-pointer select-none transition-all hover:scale-125 ${
-              language === "en" ? "block" : "hidden"
-            }`}
-            onClick={() => SetLanguage("es")}
-          />
+          {/* Spanish button */}
+          <Link
+            href="/?lang=en"
+            className={language === "es" ? "block" : "hidden"}
+          >
+            <Image
+              src="/logos/espanol.svg"
+              alt="Español Logo"
+              width={24}
+              height={24}
+              priority
+              className="w-7 py-1 rounded-md cursor-pointer select-none transition-all hover:scale-125"
+              onClick={ChangeLanguage}
+            />
+          </Link>
+          {/* English Button */}
+          <Link
+            href="/"
+            className={language === "en" ? "flex place-items-center" : "hidden"}
+          >
+            <Image
+              src="/logos/english.svg"
+              alt="English Logo"
+              width={24}
+              height={24}
+              priority
+              className="w-7 py-1 rounded-md cursor-pointer select-none transition-all hover:scale-125"
+              onClick={ChangeLanguage}
+            />
+          </Link>
         </div>
       </div>
       {/* Mobile Nav */}
