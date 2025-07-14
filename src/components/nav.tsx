@@ -10,6 +10,7 @@ import {
 } from "@heroicons/react/16/solid";
 import Link from "next/link";
 import Image from "next/image";
+import Cookies from "js-cookie";
 // Nav Main Function
 function Nav() {
   // Nav Hooks
@@ -30,6 +31,9 @@ function Nav() {
     if (PARAMS.get("lang") === "en") {
       document.documentElement.lang = "en";
       SetLanguage("en");
+    }
+    if (Cookies.get("theme") === "dark") {
+      document.documentElement.classList.add("dark");
     }
   }, []);
   // Execute this use effect to close the menu when clicking outside it
@@ -60,9 +64,11 @@ function Nav() {
     const DOCUMENT_CLASS_LIST = document.documentElement.classList;
     if (DOCUMENT_CLASS_LIST.contains("dark") === true) {
       DOCUMENT_CLASS_LIST.remove("dark");
+      Cookies.remove("theme");
       return;
     }
     DOCUMENT_CLASS_LIST.add("dark");
+    Cookies.set("theme", "dark");
   };
   // Function that Sets or Removes the current language
   const ChangeLanguage = () => {
