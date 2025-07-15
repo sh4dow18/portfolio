@@ -84,7 +84,7 @@ export default async function Home({ searchParams }: Props) {
   ];
   const PROJECTS_LIST = [
     {
-      image: "mateory",
+      name: "mateory",
       title: `Mateory - ${
         LANGUAGE === "es"
           ? "Resuelve inventarios y colas con modelos simples"
@@ -105,10 +105,10 @@ export default async function Home({ searchParams }: Props) {
           : "Solve basic inventory and queuing problems with predefined mathematical models and a few clicks in a web app.",
       github: "mateory",
       deploy: "https://mateory.vercel.app",
-      docs: null,
+      docs: false,
     },
     {
-      image: "miteve-web",
+      name: "miteve-web",
       title: `Miteve Web - ${
         LANGUAGE === "es"
           ? "Convierte tu contenido en un Netflix en casa"
@@ -129,10 +129,10 @@ export default async function Home({ searchParams }: Props) {
           : "A web tool for having your own 'Netflix at home' and watching downloaded content from a single location online.",
       github: "miteve-web",
       deploy: "https://miteve.vercel.app",
-      docs: null,
+      docs: false,
     },
     {
-      image: "miteve-api",
+      name: "miteve-api",
       title: `Miteve API - ${
         LANGUAGE === "es"
           ? "API que gestiona películas y series de Miteve"
@@ -153,10 +153,10 @@ export default async function Home({ searchParams }: Props) {
           : "API that manages and provides information on local movies and series for use with Miteve Web",
       github: "miteve-api",
       deploy: null,
-      docs: null,
+      docs: false,
     },
     {
-      image: "nirit",
+      name: "nirit",
       title: `Nirit - ${
         LANGUAGE === "es"
           ? "Entorno Linux minimalista con gestión en mosaico"
@@ -172,10 +172,10 @@ export default async function Home({ searchParams }: Props) {
           : "Desktop environment for GNU/Linux focused on tile windows, few installed packages, and high customization",
       github: "nirit",
       deploy: null,
-      docs: "https://digital-me.vercel.app/nirit",
+      docs: false,
     },
     {
-      image: "braitec",
+      name: "braitec",
       title: `Braitec - ${
         LANGUAGE === "es"
           ? "Sitio oficial de soluciones tecnológicas"
@@ -196,7 +196,7 @@ export default async function Home({ searchParams }: Props) {
           : "'Braitec: Technological Solutions' official website, which presents its services and technological solutions for users.",
       github: "braitec",
       deploy: "https://braitec-cr.vercel.app",
-      docs: null,
+      docs: false,
     },
   ];
   const STACK_LIST = [
@@ -478,8 +478,8 @@ export default async function Home({ searchParams }: Props) {
             >
               {/* Project Image */}
               <Image
-                src={`/proyects/${project.image}.webp`}
-                alt={`${project.image} Proyect Image`}
+                src={`/proyects/${project.name}.webp`}
+                alt={`${project.name} Proyect Image`}
                 width={400}
                 height={300}
                 className="rounded-xl border border-gray-700 w-full min-[800px]:w-[400px]"
@@ -520,9 +520,9 @@ export default async function Home({ searchParams }: Props) {
                       name="Deploy"
                     />
                   )}
-                  {project.docs !== null && (
+                  {project.docs === true && (
                     <ProjectButton
-                      href={`/${project.docs}`}
+                      href={`/${project.name}`}
                       icon={<DocumentIcon />}
                       name="Docs"
                     />
