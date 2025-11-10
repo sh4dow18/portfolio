@@ -26,6 +26,7 @@ import { IoLogoVercel } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import {
+  SiDotnet,
   SiGnubash,
   SiIntellijidea,
   SiKotlin,
@@ -69,6 +70,21 @@ export default async function Home({ searchParams }: Props) {
     },
   ];
   const EXPERIENCE_LIST = [
+    {
+      title:
+        LANGUAGE === "es"
+          ? "Desarrollador Back-End (Práctica Profesional)"
+          : "Back-End Developer (Professional Practice)",
+      company: "Business Tech Integrated Services (BTIS)",
+      date:
+        LANGUAGE === "es"
+          ? "Julio 2025 – Noviembre 2025"
+          : "July 2025 – November 2025",
+      description:
+        LANGUAGE === "es"
+          ? "Reestructuré desde cero usando Arquitectura en Capas e implementé buenas prácticas en la API RESTful del sistema “Portal de APIs” usando .NET 8, Postman y Visual Studio 2022. Implementé una validación de la autenticación multifactor (MFA) de Microsoft para el back-end en el Servicio de Inicio de Sesión para Usuarios de la Empresa. Optimicé la comunicación en tiempo real con WebSockets con el objetivo que el Front-end pudiera conocer cuando se hace una actualización con el back-end y actualice los datos. Creé un Servicio de Windows relacionado al sistema que verificara y actualizara la información diariamente sobre la documentación que maneja el programa. Desplegué el programa en un Windows Server con IIS para uso de la empresa."
+          : "I restructured from scratch using Layered Architecture and implemented best practices in the “Portal de APIs” system’s RESTful API using .NET 8, Postman, and Visual Studio 2022. I implemented Microsoft’s Multi-Factor Authentication (MFA) validation for the back-end in the Company User Login Service. I optimized real-time communication with WebSockets to allow the front-end to detect back-end updates and refresh data accordingly. I developed a Windows Service related to the system to verify and update information daily regarding the program’s managed documentation. I deployed the program on a Windows Server with IIS for company use.",
+    },
     {
       title: "Scrum Master",
       company: "Universidad de Costa Rica (UCR)",
@@ -241,9 +257,9 @@ export default async function Home({ searchParams }: Props) {
           fill: "fill-[#6DB33F]",
         },
         {
-          name: "Kotlin",
-          icon: <SiKotlin />,
-          href: "https://kotlinlang.org",
+          name: ".NET",
+          icon: <SiDotnet />,
+          href: "https://dotnet.microsoft.com/es-es",
           fill: "fill-[#6B57FF]",
         },
         {
@@ -310,7 +326,7 @@ export default async function Home({ searchParams }: Props) {
           ? "Bachillerato en Ingeniería en Sistemas de Información"
           : "Bachelor of Information Systems Engineering",
       company: "Universidad Nacional de Costa Rica (UNA)",
-      date: LANGUAGE === "es" ? "Actualmente" : "Current",
+      date: LANGUAGE === "es" ? "Noviembre 2025" : "November 2025",
       degree: null,
     },
     {
@@ -372,8 +388,8 @@ export default async function Home({ searchParams }: Props) {
             {LANGUAGE === "es" ? "año de experiencia" : "years of experience"}.{" "}
             <strong className="text-yellow-600 dark:text-yellow-200">
               {LANGUAGE === "es"
-                ? "Diplomado en Programación de Aplicaciones Informáticas"
-                : "Diploma in Computer Applications Programming"}
+                ? "Profesional en Programación de Aplicaciones Informáticas"
+                : "Professional in Computer Applications Programming"}
             </strong>
             . {LANGUAGE === "es" ? "Especializado en el" : "Specialized in"}{" "}
             <strong className="text-orange-700 dark:text-orange-300">
@@ -605,7 +621,7 @@ export default async function Home({ searchParams }: Props) {
           <section className="flex flex-col gap-3 leading-6 md:max-w-lg md:order-1">
             <p>
               {LANGUAGE === "es"
-                ? "Me llamo Ramsés y soy un apasionado por la tecnología, lo que mellevó a estudiar"
+                ? "Me llamo Ramsés y soy un apasionado por la tecnología, lo que me llevó a estudiar"
                 : "My name is Ramsés and I am passionate about technology, which led me to study"}{" "}
               <strong className="font-normal text-yellow-700 dark:text-yellow-200">
                 {LANGUAGE === "es"

@@ -61,7 +61,9 @@ export default function RootLayout({
             </Link>
           </p>
           {/* Last Update */}
-          <p className="text-xs sm:order-1 md:text-sm">14 de Julio del 2025</p>
+          <p className="text-xs sm:order-1 md:text-sm">
+            10 de Noviembre del 2025
+          </p>
         </footer>
       </body>
     </html>
