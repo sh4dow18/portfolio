@@ -1,0 +1,17 @@
+# Dependencies
+/node_modules/
+# Next.js
+/.next/
+/build/
+# env files
+.env*
+# Typescript
+*.tsbuildinfo
+next-env.d.ts
+# SonarQube
+.scannerwork
+.sonarqube
+coverage/
+# Storybook
+*storybook.log
+storybook-static

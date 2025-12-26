@@ -1,0 +1,27 @@
+// Set this hook as a client hook
+"use client";
+// Use Sidebar Nav Requirements
+import { useCallback, useEffect, useRef, useState } from "react";
+import { GetSidebarNavPreference, SetSidebarNavPreference } from "../config/local-storage";
+// Use Sidebar Nav Main Function
+function useSidebarNav() {
+  // Use Sidebar Nav Hooks
+  const [open, setOpen] = useState<boolean>(() => {
+    const PREFERENCES = GetSidebarNavPreference();
+    return PREFERENCES ?? true;
+  });
+  const PREFERENCE_LOADED = useRef(false);
+  // useEffect that will Set User Preferences in local storage when change in sidebar nav menu
+  useEffect(() => {
+    // If user preferences are loaded, set new accessibility preferences
+    if (PREFERENCE_LOADED.current) {
+      SetSidebarNavPreference(open);
+    }
+  }, [open]);
+  // Main Functions to handle hook
+  const toggle = useCallback(() => setOpen((prev) => !prev), []);
+  // Return new hook values and functions
+  return { open, toggle };
+}
+
+export default useSidebarNav;
