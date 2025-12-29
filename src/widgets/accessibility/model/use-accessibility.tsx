@@ -64,18 +64,9 @@ const MODE_EFFECTS: Record<keyof ModeStates, (enabled: boolean) => void> = {
 // Use Accessibility Main Function
 function useAccessibility() {
   // Use Accessibility Hooks
-  const [theme, setTheme] = useState<ThemeStates>(() => {
-    const PREFERENCES = GetAccessibilityPreferences();
-    return PREFERENCES?.theme ?? DEFAULT_THEME_OBJECT;
-  });
-  const [font, setFont] = useState<FontStates>(() => {
-    const PREFERENCES = GetAccessibilityPreferences();
-    return PREFERENCES?.font ?? DEFAULT_FONT_OBJECT;
-  });
-  const [mode, setMode] = useState<ModeStates>(() => {
-    const PREFERENCES = GetAccessibilityPreferences();
-    return PREFERENCES?.mode ?? DEFAULT_MODE_OBJECT;
-  });
+  const [theme, setTheme] = useState<ThemeStates>(DEFAULT_THEME_OBJECT);
+  const [font, setFont] = useState<FontStates>(DEFAULT_FONT_OBJECT);
+  const [mode, setMode] = useState<ModeStates>(DEFAULT_MODE_OBJECT);
   const PREFERENCES_LOADED = useRef(false);
   // useEffect that will Set User Preferences in Hooks when page is loading
   useEffect(() => {
@@ -87,12 +78,15 @@ function useAccessibility() {
       Object.entries(USER_PREFERENCES.theme).forEach(([key, enabled]) => {
         THEME_EFFECTS[key as keyof ThemeStates](enabled);
       });
+      setTheme(USER_PREFERENCES.theme ?? DEFAULT_THEME_OBJECT);
       Object.entries(USER_PREFERENCES.font).forEach(([key, enabled]) => {
         FONT_EFFECTS[key as keyof FontStates](enabled);
       });
+      setFont(USER_PREFERENCES.font ?? DEFAULT_FONT_OBJECT);
       Object.entries(USER_PREFERENCES.mode).forEach(([key, enabled]) => {
         MODE_EFFECTS[key as keyof ModeStates](enabled);
       });
+      setMode(USER_PREFERENCES.mode ?? DEFAULT_MODE_OBJECT);
     }
     // Set preferences loaded as true
     PREFERENCES_LOADED.current = true;

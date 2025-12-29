@@ -15,8 +15,7 @@ export const ROUTES_LIST: Route[] = [
   {
     path: "",
     title: "Inicio",
-    summary:
-      "Mateory es una herramienta web que simplifica la resolución de problemas de Teorías de Inventarios y Teorías de Colas. Optimice sus cálculos y visualice las fórmulas detrás de cada modelo.",
+    summary: "Portafolio de Ramsés Solano Arias, donde se encuentran sus experiencias y proyectos.",
     Icon: FaHome,
     inSitemap: true,
     inHome: false,
