@@ -1,6 +1,7 @@
 // Routes Requirements
 import { IconType } from "react-icons";
 import { FaHome } from "react-icons/fa";
+import { HiMiniBriefcase } from "react-icons/hi2";
 // Route Type
 type Route = {
   readonly path: string;
@@ -8,7 +9,6 @@ type Route = {
   readonly summary: string;
   readonly Icon: IconType;
   readonly inSitemap: boolean;
-  readonly inHome: boolean;
 };
 // Routes List
 export const ROUTES_LIST: Route[] = [
@@ -18,7 +18,13 @@ export const ROUTES_LIST: Route[] = [
     summary: "Portafolio de Ramsés Solano Arias, donde se encuentran sus experiencias y proyectos.",
     Icon: FaHome,
     inSitemap: true,
-    inHome: false,
+  },
+  {
+    path: "experience",
+    title: "Experiencia",
+    summary: "Experiencia Laboral de Ramsés Solano Arias hasta la actualidad",
+    Icon: HiMiniBriefcase,
+    inSitemap: true,
   },
 ];
 // Map that allows to get page data easier
