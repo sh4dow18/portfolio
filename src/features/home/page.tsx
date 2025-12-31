@@ -5,7 +5,7 @@ import { PAGES_BUTTONS_LIST, SOCIAL_BUTTONS_LIST } from "./config/buttons";
 // Home Page Main Function
 function HomePage() {
   return (
-    <section className="flex flex-col gap-10 justify-center 2xl:h-full items-center">
+    <section className="flex flex-col gap-10 justify-center 2xl:h-full items-center 2xl:font-xlarge:h-auto 5xl:font-xlarge:h-full">
       <div className="flex gap-5 justify-center items-center">
         {/* Hero Information Container */}
         <section className="flex flex-col gap-3 md:gap-5">
@@ -22,11 +22,11 @@ function HomePage() {
             <Badge working={false} />
           </div>
           {/* Title */}
-          <h1 className="text-3xl font-extrabold dark:text-gray-300 md:text-5xl">
+          <h1 className="text-3xl font-extrabold dark:text-gray-300 md:text-5xl font-small:text-2xl font-large:text-4xl font-xlarge:text-5xl xl:font-small:text-4xl xl:font-large:text-6xl xl:font-xlarge:text-7xl">
             Hola, <span className="text-primary dark:text-primary-light">soy Ramsés</span>
           </h1>
           {/* Ramsés Solano Description */}
-          <section className="flex flex-col gap-3 leading-8 dark:text-gray-300 md:max-w-3xl md:order-1 xl:text-lg">
+          <section className="flex flex-col gap-3 leading-8 dark:text-gray-300 md:max-w-3xl md:order-1 xl:text-lg font-small:text-sm font-large:text-lg font-large:leading-8 font-xlarge:text-xl font-xlarge:leading-9 xl:font-small:text-base xl:font-large:text-xl xl:font-xlarge:text-2xl">
             <p>
               Ingeniero en Sistemas de Información con{" "}
               <strong className="text-yellow-600 dark:text-yellow-200">
