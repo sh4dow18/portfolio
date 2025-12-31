@@ -1,9 +1,9 @@
 {
   "name": "portfolio-fsd",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
-    "init": "npm install && npm audit fix && npx husky install",
+    "init": "npm install && npm audit fix && husky",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

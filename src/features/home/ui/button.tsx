@@ -26,7 +26,9 @@ function Button({ href, Icon, title, newTab, label }: Props) {
         className:
           "w-7 h-7 scale-90 fill-gray-900 group-hover:fill-gray-300 dark:fill-gray-300 dark:group-hover:fill-gray-900",
       })}
-      {label && <span>{label}</span>}
+      {label && (
+        <span className="font-small:text-sm font-large:text-lg font-xlarge:text-xl">{label}</span>
+      )}
     </Link>
   );
 }

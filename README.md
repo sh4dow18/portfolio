@@ -1,11 +1,11 @@
 # Portfolio
 
-[![Version](https://img.shields.io/badge/version-0.1.0-00AA00?style=for-the-badge&logo=github&labelColor=gray)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.0-00AA00?style=for-the-badge&logo=github&labelColor=gray)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0066AA?style=for-the-badge&labelColor=gray)](LICENSE)
-[![CI-CD](https://img.shields.io/github/actions/workflow/status/sh4dow18/mateory-fsd/ci-cd.yml?style=for-the-badge&label=CI-CD&labelColor=gray&logo=vercel&labelColor=white)](https://github.com/sh4dow18/mateory-fsd/actions)
+[![CI-CD](https://img.shields.io/github/actions/workflow/status/sh4dow18/portfolio-fsd/ci-cd.yml?style=for-the-badge&label=CI-CD&labelColor=gray&logo=vercel&labelColor=white)](https://github.com/sh4dow18/portfolio-fsd/actions)
 [![Docs](https://img.shields.io/badge/docs-ff4785?style=for-the-badge&labelColor=gray&logo=googledocs&logoColor=ff4785)](https://ramses-solano.vercel.app/projects/portfolio)
 ![Issues](https://img.shields.io/badge/open%20issues-0-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
-![Coverage](https://img.shields.io/badge/test%20coverage-84.8%25-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
+![Coverage](https://img.shields.io/badge/test%20coverage-85.3%25-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
 ![Duplications](https://img.shields.io/badge/duplications-0%25-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
 ![Hostposts](https://img.shields.io/badge/hostposts-0-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
 
@@ -15,7 +15,7 @@ This project is my own portfolio which is like a digital resume
 
 ## Project Status
 
-**Version 0.1.0**. See [`CHANGELOG.md`](CHANGELOG.md) for version history.
+**Version 0.2.0**. See [`CHANGELOG.md`](CHANGELOG.md) for version history.
 
 ---
 
