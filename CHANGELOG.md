@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/sh4dow18/portfolio-fsd/compare/v0.2.0...v0.3.0) (2026-01-04)
+
+
+### Features
+
+* **projects:** add page ([538018d](https://github.com/sh4dow18/portfolio-fsd/commit/538018dbf2ebd46d100d4dc3408201889b466f99))
+
 ## [0.2.0](https://github.com/sh4dow18/portfolio-fsd/compare/v0.1.0...v0.2.0) (2025-12-31)
 
 
