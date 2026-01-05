@@ -1,6 +1,6 @@
 // Buttons Requirements
 import { IconType } from "react-icons";
-import { FaCss3Alt, FaFilePdf, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaFilePdf, FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiAcademicCap, HiMiniBriefcase, HiMiniCodeBracket } from "react-icons/hi2";
 import { MdEmail } from "react-icons/md";
 // Buttons Type
