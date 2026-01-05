@@ -102,7 +102,7 @@ function HomePage() {
         </div>
       </div>
       {/* Pages Buttons List Container */}
-      <div className="flex flex-wrap gap-5 justify-center">
+      <div className="flex flex-col gap-3 justify-center w-full *:w-full md:flex-row md:*:w-fit">
         {PAGES_BUTTONS_LIST.map((button) => (
           <Button
             key={button.href}
