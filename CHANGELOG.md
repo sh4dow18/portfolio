@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/sh4dow18/portfolio-fsd/compare/v0.3.0...v0.4.0) (2026-01-05)
+
+
+### Features
+
+* **degrees:** add page ([02b8f43](https://github.com/sh4dow18/portfolio-fsd/commit/02b8f43e23ec29229e675d127f54327c8e912d1e))
+
+
+### Bug Fixes
+
+* **home:** button links to connect with pages ([9f01eb0](https://github.com/sh4dow18/portfolio-fsd/commit/9f01eb010645aa860a511efff47c5d36d0a4e3fa))
+
 ## [0.3.0](https://github.com/sh4dow18/portfolio-fsd/compare/v0.2.0...v0.3.0) (2026-01-04)
 
 
