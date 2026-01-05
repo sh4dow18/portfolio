@@ -1,7 +1,7 @@
 // Routes Requirements
 import { IconType } from "react-icons";
 import { FaHome } from "react-icons/fa";
-import { HiMiniBriefcase, HiMiniCodeBracket } from "react-icons/hi2";
+import { HiAcademicCap, HiMiniBriefcase, HiMiniCodeBracket } from "react-icons/hi2";
 // Route Type
 type Route = {
   readonly path: string;
@@ -31,6 +31,13 @@ export const ROUTES_LIST: Route[] = [
     title: "Proyectos",
     summary: "Todos los proyectos en los que Ramsés Solano Arias ha trabajado.",
     Icon: HiMiniCodeBracket,
+    inSitemap: true,
+  },
+  {
+    path: "degrees",
+    title: "Títulos",
+    summary: "Todos los títulos académicos que Ramsés Solano Arias posee hasta la actualidad.",
+    Icon: HiAcademicCap,
     inSitemap: true,
   },
 ];
