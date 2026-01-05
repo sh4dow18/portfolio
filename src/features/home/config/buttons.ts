@@ -51,8 +51,8 @@ export const PAGES_BUTTONS_LIST: Button[] = [
   {
     href: "/experience",
     icon: HiMiniBriefcase,
-    title: "Ver Experiencia",
-    label: "Ver Experiencia",
+    title: "Ver Experiencia Laboral",
+    label: "Ver Experiencia Laboral",
   },
   {
     href: "/projects",
@@ -61,13 +61,7 @@ export const PAGES_BUTTONS_LIST: Button[] = [
     label: "Ver Proyectos Hechos",
   },
   {
-    href: "/stack",
-    icon: FaCss3Alt,
-    title: "Ver Stack Usado",
-    label: "Ver Stack Usado",
-  },
-  {
-    href: "/education",
+    href: "/degrees",
     icon: HiAcademicCap,
     title: "Ver Títulos Obtenidos",
     label: "Ver Títulos Obtenidos",
